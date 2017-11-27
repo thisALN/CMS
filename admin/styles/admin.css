@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	font-family: 'Open sans', sans-serif;
+	background: #DDD;
+	padding-bottom: 120px;
+}
+.clearfix {
+	clear: both;
+}
+h1 {
+	font-family: verdana, sans-serif;
+}
+h1 > a {
+    text-decoration: none;
+    color: inherit;
+}
+h2 {
+	z-index: -1;
+}
+header {
+	background: #888;
+	height: 80px;
+	border-bottom: 1px solid black;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+	top: 44px;
+}
+header > h1 {
+	display: inline-block;
+    margin: 21px 10px 0 0.4em;
+    font-size: 60px;
+	color: #DDD;
+	text-transform: uppercase;
+}
+.subcontent-test {
+    width: 31%;
+    padding: 5px 1%;
+    display: inline-block;
+    border-left: 1px #888 solid;
+    vertical-align: top;
+}
+#sub-menu {
+    display: inline-block;
+    vertical-align: super;
+    color: #BBB;
+    font-size: 14px;
+}
+#sub-menu ul {
+	margin: 0;
+	padding: 0;
+}
+#sub-menu li {
+	display: inline-block;
+	font-weight: bold;
+	color: #DDD;
+}
+#sub-menu li:hover a {
+	background: #DDD;
+	color: white;
+}
+#sub-menu a {
+	color: inherit;
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.25em 1em;
+	margin: 0 2px;
+	box-shadow: 0 0 0 1px #DDD;
+}
+.section {
+	position: absolute;
+	left: 1em;
+	right: 1em;
+	z-index: 100;
+	top: 124px;
+}
+.highlight {
+	background: white;
+	padding: 1em;
+}
+.thumb-img {
+	float: left;
+	margin: 1% 10px;
+}
+img.thumb {
+	max-width: 350px;
+}
+.delete-button {
+	color: red;
+}
+#submit-new {
+	/*height: 20px;*/
+}

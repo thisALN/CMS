@@ -1,0 +1,33 @@
+Site - site.txt
+ - Title
+ - Description
+
+Media
+	images.txt
+All // name type etc
+IMG // name type width height description
+
+Content
+	content.txt
+Default // url id  author tdate  content
+   types// str int int    string string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Other stuff:
+(per session) iterators are reset at the end of a page loading
