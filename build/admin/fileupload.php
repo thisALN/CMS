@@ -5,6 +5,8 @@ if (!is_dir($dir."/thumbs")) {
 	mkdir($dir."/thumbs");
 }
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	echo $_POST;
+	return;
 	$tmpFile = $_FILES['pic']['tmp_name'];
 	$newFile = $dir."/".$_FILES['pic']['name'];
 	$result = move_uploaded_file($tmpFile, $newFile);

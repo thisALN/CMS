@@ -9,11 +9,7 @@ $_SESSION["data"] = array(
     "id" => 0,
     "content" => "",
 );
-$GLOBALS["theme"] = array(
-	"title" => "testTheme",
-	"valid" => true,
-	"handle" => "testtheme"
-);
+
 $GLOBALS["title"] = ripData("sitetitle"); //Site title
 $GLOBALS["tagline"] = ripData("sitetag"); //Site tagline
 $GLOBALS["description"] = ripData("sitedesc"); //Site description
@@ -31,14 +27,7 @@ if (!isset($GLOBALS["imgs"])) {
 	$GLOBALS["imgs"] = $ans;
 }
 
-//loadDB() void by ripData and relevant files
-//loadDB();
-//first.php
-function loadDB() {
-    $db = mysqli_connect('external-db.s216087.gridserver.com','db216087','ALNpasswd!2','db216087_cmstest')or die('Error connecting to MySQL server.');
-    $GLOBALS["db"] = $db;
-    return $db;
-}
+
 function ripData($arg) {
 	$cPath = realpath(__DIR__.'/../admin/data/')."/site.txt";
 	$datas = array();
@@ -90,7 +79,27 @@ function putData($name = "", $tag = "", $desc = "") {
 function init_theme() {
 	
 }
-
+function theme_exists() {
+	return $GLOBALS["theme"]["valid"];
+}
+function load_theme() {
+	$str = "testTheme";
+	if (!is_dir("themes")) {
+		mkdir("themes");
+	}
+	//adding fails due to permissions
+	//mkdir("themes/".$str);
+	//echo realpath()
+	//copy("/admin/sampleTheme/index.php", "themes/".$str."/")
+	new_theme("TestTheme", $str);
+}
+function new_theme($newTitle, $newHandle) {
+	$GLOBALS["theme"] = array(
+		"title" => $newTitle,
+		"valid" => true, //set based on whether the files exist
+		"handle" => $newHandle
+	);
+}
 
 function aln_query() {
     $url = $_SERVER['REQUEST_URI'];
@@ -141,12 +150,7 @@ function body_class() {
 		return " admin-active";
 	}
 }
-function theme_exists() {
-	return $GLOBALS["theme"]["valid"];
-}
-function load_theme() {
-	include("themes/testTheme/index.php");
-}
+
 
 
 

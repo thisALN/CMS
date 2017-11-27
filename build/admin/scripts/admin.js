@@ -1,23 +1,24 @@
-var entry, canvas, ctx;
+var entry, canvas, ctx, changed = false;
 Element.prototype.remove = function() {
     this.parentElement.removeChild(this);
 }
-function uploadImage(e) {
+function uploadImage(imgs) {
 	//e.preventDefault();
+	var files = imgs;
+	if (files.length == 0) {console.log("no files"); return;}
 	var repo = new XMLHttpRequest();
-	var pic = document.getElementById("pic-upload");
-	//var form = document.getElementById("inputform");
 	var data = new FormData();
 	for (i=0; i<pic.files.length; i++) {
 		data.append('pic'+i, pic.files[i]);
 	}
+	//data.append('pic', pic);
 	repo.onreadystatechange = function() {
       	if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);
 			if (!this.responseText) {
 				console.log("no response found");
 			}
-			//alert(this.responseText);
+			console.log(this.responseText);
 		}
 	};
 	repo.open("POST", "fileupload.php", true);
@@ -35,11 +36,12 @@ function addData(filename, mode, data) {
 	repo.open("GET", data, true);
 	repo.send();
 }
+//Draws image previews on page, 
 function handleFileSelect(evt) {
-	console.log("hello");
+	if (changed) {return;}
+	changed = true; //onChange getting called twice fix
 	var files = evt.files; // FileList object
-	console.log(files);
-	var length = files.length;
+	var length = files.length;//files.length;
 	for (var j=0; j<length; j++) {
 		(function(file, j) {
 			var elem = new Image();
@@ -51,10 +53,10 @@ function handleFileSelect(evt) {
 				canvas.width = (20+width)*(j+1);
 				canvas.height = height;
 				ctx.drawImage(elem, j*(width+20), 0, width, height);
-				//goWrap(elem, j);
+				goWrap(elem, j);
 			}
  			elem.src = URL.createObjectURL(file);
- 		})(files[j]);
+ 		})(files[j], j);
 	}
 }
 function goWrap(img, i) {

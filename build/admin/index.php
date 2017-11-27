@@ -10,7 +10,7 @@
 		<script src="scripts/admin.js"></script>
     </head>
     <body class="<?php echo body_class(); ?>">
-		<?php include "header.php"; ?>
+		<?php include "parts/header.php"; ?>
 		<div class="section">
 			<div class="highlight">
 				<h1>A CMS</h1>
@@ -62,8 +62,8 @@
 				<hr>
 				<h3>Upload</h3>
 				<form action="" enctype="multipart/form-data" method="POST" onsubmit="uploadImage();" id="inputform">
-					<input type="file" name="pic" id="pic-upload" onchange="handleFileSelect(this);" multiple/>
-					<input type="submit" value="Upload" />
+					<input type="file" name="pic" id="pic-upload" onchange="handleFileSelect(this);" onclick="alert('Doesnt work. No upload.'); return;" multiple/>
+					<input type="submit" value="Upload" disabled/>
 				</form>
 				<canvas id="img-preview">Image preview but your browser doesn't support a canvas.</canvas>
 			</div>
