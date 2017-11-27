@@ -7,6 +7,7 @@
 	</style>
 </head>
 <body>
+	<a href="images/CMS.pdf">A pdf</a>
 	<p>I've been trying to finish this before I build another portfolio/personal website because each time I do that I mostly delete my previous content and have to refind it. Also because once its built my site never changes, just the look if I want it to but its also fully automate-able. Basically the main theory is similar to wordpress but different by</p>
 	<blockquote>theme -> post OR page / media is completely separate<br>
 	<em>posts are single entries<br>
