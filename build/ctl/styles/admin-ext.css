@@ -34,7 +34,7 @@
 	box-shadow: 0 0 5px black;
 }
 #hamburger {
-    background: url("../../admin/images/hamburgur.png") center no-repeat #6A5750;
+    background: url("../../ctl/images/hamburgur.png") center no-repeat #6A5750;
     width: 2em;
     height: 1.5em;
     position: absolute;

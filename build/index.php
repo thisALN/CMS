@@ -1,15 +1,14 @@
 <?php
-session_start();
-echo "working";
-include("ctl/includes/functions.php");
-echo "again";
-if (theme_exists() || true) {
+//Set global variables, instances are sessions?
+include "ctl/includes/setup.php";
+if (theme_exists()) {
 	load_theme(); //sets global.theme, keep them loaded indefinitely somehow if future
-	//query_data();
 	include("themes/".$GLOBALS["theme"]["handle"]."/index.php");
 } else {
 	//echo "no theme found"; //debug, change later
-	echo $_SESSION["baseurl"] . "anotha";
+	new_theme("TestTheme", "testTheme");
+	echo $_SESSION["baseurl"] . "anotha1".theme_exists();;
 	load_theme();
 }
-session_destroy();?>
+session_destroy();
+?>

@@ -27,7 +27,7 @@
 		<?php query_content(); ?>
 		<h2>Images</h2>
 		<hr>
-		<? query_imgs(); ?>
+		<?php query_media(); ?>
 		<?php get_content(); 
 			get_footer(); ?>
 	</body>
