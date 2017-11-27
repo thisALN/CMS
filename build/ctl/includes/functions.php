@@ -29,7 +29,10 @@ if (!isset($GLOBALS["imgs"])) {
 
 
 function ripData($arg) {
-	$cPath = realpath(__DIR__.'/../admin/data/')."/site.txt";
+	echo "</br>" . getcwd() . "</br>" 
+		. __DIR__ . "</br>" 
+		. __DIR__."../ctl/data"."/site.txt";
+	$cPath = realpath(__DIR__.'/ctl/data/')."/site.txt";
 	$datas = array();
 	foreach(file($cPath) as $line) {
 		array_push($datas, $line);
@@ -51,7 +54,7 @@ function ripData($arg) {
 }
 function ripContent($arg) {
 	//$GLOBALS["content"]; reset?
-	$cPath = realpath(__DIR__.'/../admin/data/')."/content.txt";
+	$cPath = realpath(__DIR__.'/../ctl/data/')."/content.txt";
 	$datas = array();
 	foreach(file($cPath) as $line) {
 		$subd = preg_split("/[\t]/", $line);
@@ -90,7 +93,7 @@ function load_theme() {
 	//adding fails due to permissions
 	//mkdir("themes/".$str);
 	//echo realpath()
-	//copy("/admin/sampleTheme/index.php", "themes/".$str."/")
+	//copy("/ctl/sampleTheme/index.php", "themes/".$str."/")
 	new_theme("TestTheme", $str);
 }
 function new_theme($newTitle, $newHandle) {
@@ -146,7 +149,7 @@ function get_footer() {
 }
 function body_class() {
 	$_SESSION["dataload"] = $_SESSION["dataload"] ? false : true;
-	if ($_SESSION["auth"]) { //remove false after adding exception to not add margin to /admin/
+	if ($_SESSION["auth"]) { //remove false after adding exception to not add margin to /ctl/
 		return " admin-active";
 	}
 }

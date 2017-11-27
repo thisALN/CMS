@@ -6,6 +6,7 @@ function query_imgs() {
 	}
 }
 function query_content() {
+	ripContent("");
 	echo "<div class=\"content-wrap-test\">";
 	echo "<div class=\"subcontent-test\">";
 	for ($i=0; $i<count($GLOBALS["content"]); $i++) {
