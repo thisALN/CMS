@@ -1,0 +1,6 @@
+/	0	0	00/11/2020@12:13:14	Started	This is the home page
+/hi	1	0	04/24/1997@16:24:00	Welcome	Welcome to this cms thing. Chamge this content at some point, this is a welcome page that you should probably delete. May have userful info on it sometime.
+/test	2	0	09/11/2001@07:34:00	Testing	some test content
+/not	3	1	03/56/4032@85:23:00	Not me	Wassup it might be someone else but maybe not also this is kinda a test.
+/ya	4	1	05/12/1294/44:23:34	BS and	some content I think
+/rel	5	0	03/77/4378@23:12:30	title	a bunch of more stuff

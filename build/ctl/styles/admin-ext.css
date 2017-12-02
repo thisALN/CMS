@@ -1,0 +1,50 @@
+#admin-bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 44px;
+    background: #30231D;
+    z-index: 200;
+}
+#admin-bar > a {
+    text-decoration: none;
+    color: #B5A397;
+    display: inline-block;
+}
+#admin-bar h2 {
+    margin: 0.2em 1em;
+    font-family: "Open Sans", Verdana, sans-serif;
+    font-weight: normal;
+    text-shadow: 0 0 5px black;
+}
+#admin-bar:hover a {
+    text-decoration: underline;
+}
+#admin-bar:hover > #hamburger {
+    background-color: #B5A397;
+    transition: all .4s ease;
+}
+#admin-bar > a:hover {
+    color: white;
+    transition: all .4s ease;
+}
+#hamburger:hover {
+    background-color: white;
+	box-shadow: 0 0 5px black;
+}
+#hamburger {
+    background: url("../../ctl/images/hamburgur.png") center no-repeat #6A5750;
+    width: 2em;
+    height: 1.5em;
+    position: absolute;
+    right: 1em;
+    top: 0.6em;
+}
+
+#hamburger ul * {
+    display: none;
+}
+body.admin-active {/*this class isn't used on the admin site due to how I scroll to the top */
+	margin-top: 44px;
+}
